@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_task/component/29-07-task.dart';
 import 'package:my_task/screen/task_page.dart';
 
-import '../oop_task/task_1_Book.dart';
+import '../oop_task/task_1_book.dart';
 import '../oop_task/task_2_student.dart';
 import '../oop_task/task_3_BankAccount.dart';
 import '../oop_task/task_4_product.dart';
@@ -288,54 +289,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text("29/07/2024"),
-            ),
-            ListTile(
-              leading: const Icon(Icons.add_task),
-              title: const Text('Task 1 Book'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => BookPage(),
-                    ));
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.add_task),
-              title: const Text('Task 2 Student'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => StudentScreen(),
-                    ));
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.add_task),
-              title: const Text('Task 3 BankAccount'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => BankAccountPage(),
-                    ));
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.add_task),
-              title: const Text('Task 4 Product'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ProductListPage(),
-                    ));
-              },
-            ),
+           Expanded(child: dayWiseTask()),
             Expanded(
               child: ListView.builder(
                 itemCount: _tasks.length,
